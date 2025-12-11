@@ -12,6 +12,7 @@ public class RandomCubesGenerator : MonoBehaviour
     int objectCounter = 0;
     // obiekt do generowania
     public GameObject block;
+    public List<Material> materials = new List<Material>();
 
     void Start()
     {
@@ -41,9 +42,21 @@ public class RandomCubesGenerator : MonoBehaviour
         foreach(Vector3 pos in positions)
         {
             Instantiate(this.block, this.positions.ElementAt(this.objectCounter++), Quaternion.identity);
+            SetRandomMaterial();
             yield return new WaitForSeconds(this.delay);
         }
         // zatrzymujemy coroutine
         StopCoroutine(GenerujObiekt());
+    }
+
+    private void SetRandomMaterial()
+    {
+        if (materials.Count == 0)
+        {
+            return;
+        }
+
+        var renderer = block.GetComponent<Renderer>();
+        renderer.material = materials[Random.Range(0, materials.Count)];
     }
 }
