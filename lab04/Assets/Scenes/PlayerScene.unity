@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 267635899}
   - component: {fileID: 267635898}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2205,8 +2205,9 @@ GameObject:
   - component: {fileID: 1232351904}
   - component: {fileID: 1232351903}
   - component: {fileID: 1232351902}
+  - component: {fileID: 1232351906}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: PlayerCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2323,13 +2324,44 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232351901}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.14536399, z: -0, w: 0.9893783}
+  m_LocalRotation: {x: -0, y: 0.5035316, z: -0, w: 0.8639768}
   m_LocalPosition: {x: -0.12000084, y: 1.3699999, z: -0.17000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 267635903}
-  m_LocalEulerAnglesHint: {x: 0, y: -16.717, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 60.468, z: 0}
+--- !u!114 &1232351906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232351901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e91281a6dedf34e827fb8852e8b963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LookAround
+  player: {fileID: 267635903}
+  lookAction:
+    m_Name: Look
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: ce68a9a1-6e56-4105-8b9b-af8e034b73cf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ce6c20e8-0d07-45c6-b011-a63a23c5981c
+      m_Path: <Mouse>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look
+      m_Flags: 0
+    m_Flags: 0
+  sensitivity: 50
 --- !u!1 &1382915542
 GameObject:
   m_ObjectHideFlags: 0
